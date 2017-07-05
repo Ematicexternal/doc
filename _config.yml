@@ -1,13 +1,13 @@
 # Setup
 title:        Ematic Solutions Docs
 tagline:      ""
-baseurl:      ""
+baseurl: 	  /doc
 paginate:     1
 
 # About/contact
-author:
-  name:       Author name
-  url:        http://yourhomepage.com 
+# author:
+#   name:       Author name
+#   url:        http://yourhomepage.com 
 
 # Gems
 gems:
@@ -18,4 +18,3 @@ markdown: kramdown
 
 permalink: none
 
-baseurl: /doc
