@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  
+  {% include head.html %}
+
+  <body>
+    {% include page-header.html %}
+
+    <section class="main-content">
+      
+	    <div class="sidebar">
+	    	{% assign sorted_posts = site.posts | sort:"order" %}
+	    	{% for category in site.categories %}
+	    	  	<div class="lead-cat" name="{{ category | first }}">{{ category | first | replace: '-',' '}}</div>
+	    	    <ul>
+	    	    {% for post in sorted_posts %}
+	  	      	 {% if post.url %}
+	  	        	<li><a href="{{ post.url }}">{{ post.title }}</a></li>
+	  	         {% endif %}
+	    	    {% endfor %}
+	    	    </ul>
+	    	{% endfor %}
+			</div>
+
+
+      <div class="content">
+      	{{ content }}
+  		</div>
+
+      
+
+    </section>
+    {% include page-footer.html %}
+  </body>
+</html>
