@@ -17,3 +17,5 @@ gems:
 markdown: kramdown
 
 permalink: none
+
+baseurl: /doc
