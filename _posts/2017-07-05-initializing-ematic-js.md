@@ -5,9 +5,12 @@ categories: Quick-Start
 order: 1
 ---
 
-# Ematic Platform - Main Part
-* Paste the following JavaScript snippet into your website templates so that it appears __before the closing__ ```</head>``` tag.
-* When this code runs, it asynchronously loads the __ematic.min.js__ library onto the page, creates a tracker object for the __Ematic APIKey__ you've specified.
+# Initializing Ematic.js
+
+If your website is using requireJS, move to the requireJS part in this page that is build specifically for it.
+
+Basically in order to use Bye-iQ, you just need to copy and paste the following JavaScript snippet into your website templates so that it appears __before the closing__ ```</head>``` tag.
+
 
 ```js
 <script>
@@ -15,20 +18,24 @@ order: 1
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//api.ematicsolutions.com/v1/ematic.min.js','ematics');
-
-    var ematicApikey = "<Environment specific Ematic APIKey>";
-    var opt = {
-        email: "<email of the user logged in if applicable>",
-        country_iso: "<current country iso code>",
-        currency_iso: "<current currency iso code>",
-        language_iso: "<current language iso code>"
-    };
     
     //initialize
-    ematics("create", ematicApikey, opt);
+    ematics("create", ematicApikey, null);
 </script>
 ```
-## Require.js Initialization
+
+### Adding email address into the script
+```js
+ematics("set", "email", "<email of the user logged in if applicable>")
+```
+
+When the code runs, it asynchronously loads the __ematic.min.js__ library onto the page, creates a tracker object for the __Ematic APIKey__ you've specified.
+
+---
+# Initializing Ematic.js on RequireJS:
+
+If your website is using requireJS, follow this configuration in order to initialize the object properly.
+
 ```js
 require.config({
     config: {

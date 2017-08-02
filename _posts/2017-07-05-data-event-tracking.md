@@ -9,7 +9,9 @@ order: 2
 
 ## Preparing your product data
 ---
-Prepare the _products array_, a snapshot of all the items in the cart, all the items to be checked-out or all items that are being converted.
+In order to use Retry-iQ, this data & events tracking must be implemented.
+
+Firstly, prepare the _products array_, a snapshot of all the items in the cart, all the items to be checked-out or all items that are being converted.
 
 ```js
 // prepare the products array and issue the API call
@@ -42,31 +44,32 @@ Prepare the _products array_, a snapshot of all the items in the cart, all the i
 
 ## Ematic Events Tracking
 ---
+Basically there are 4 events (browse, cart, checkout, conversion) that need to be implemented on your website. Please note that all these methods need to come after ematic tracker object is created.
 
 ### Browse
-Include the following snippet of code to track items that are being browsed. Please note that __all API calls need to come after ematic tracker object is created__. 
-Keep in mind that "products" is an array, even if you are logging a single product browse.
+Include the following snippet of code to track items that are being browsed.
+Keep in mind that "products" is an **array**, even if you are logging a single product browse.
 
 ```js
 //track items browsed
 ematics("log", "product", "browse", products);
 ```
 ### Cart
-Include the following snippet of code to __track items that are being added, updated and removed__ from the cart (which will also enable pre-abandonded cart overlays on appropriate triggers). Please note that all API calls need to come after ematic tracker object is created.
+Include the following snippet of code to __track items that are being added, updated and removed__ from the cart (which will also enable pre-abandonded cart overlays on appropriate triggers).
 
 ```js
 //track items in cart to enable pre-abandonded cart overlays
 ematics("log", "product", "cart", products);
 ```
 ### Checkout
-Include the following snippet of code to __track items that are being checkedout__. Please note that all API calls need to come after ematic tracker object is created.
+Include the following snippet of code to __track items that are being checked out__.
 
 ```js
 //track checkout
 ematics("log", "product", "checkout", products);
 ```
 ### Conversion
-Include the following snippet of code to __track items that are being converted__. Please note that all API calls need to come after ematic tracker object is created.
+Include the following snippet of code to __track items that are being converted__.
 
 ```js
 //track conversion
