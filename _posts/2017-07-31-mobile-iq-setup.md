@@ -6,13 +6,13 @@ order: 2
 ---
 # Setup
 
-1) Write your own `Application` class (Documentation: [Application](https://developer.android.com/reference/android/app/Application.html)). If you already did this, go to the next step:
+1. Write your own `Application` class (Documentation: [Application](https://developer.android.com/reference/android/app/Application.html)). If you already did this, go to the next step:
 
-2) Add Mobile-IQ initialization code to your application `onCreate` method:
+2. Add Mobile-IQ initialization code to your application `onCreate` method:
 
     MobileIQ.init(getApplicationContext(), "<your_ematic_api_key>", "<your_esp_api_key>");
 
-3) Implement `ProductInterface` (`com.ematicsolutions.mobileiq.model.ProductInterface`) in your product class, for example:
+3. Implement `ProductInterface` (`com.ematicsolutions.mobileiq.model.ProductInterface`) in your product class, for example:
 
     public class Product implements ProductInterface {
 

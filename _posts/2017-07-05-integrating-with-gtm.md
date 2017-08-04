@@ -7,19 +7,19 @@ order: 3
 # Integrating with Google Tag Manager
 
 ## Steps
-1. Prepare the data needed from your backend and send it as dataLayer object
-2. Go to your GTM Account
-3. Create new GTM tag
-4. Paste the script and choose the trigger
-5. Preview the tag to test it
-6. Publish the tag
+1. Prepare the data needed from your back-end and send it as a dataLayer object.
+2. Go to your GTM Account.
+3. Create a new GTM tag.
+4. Paste the script and choose the trigger.
+5. Preview the tag to test it.
+6. Publish the tag.
 
 ---
 ## Initializing Ematic.js With GTM
 
-In order to use Bye-iQ, you just need to copy and paste Ematic initial script to the custom HTML tag in GTM. These are the steps:
+To use Bye-iQ, copy and paste the Ematic initial script to the custom HTML tag in GTM. These are the steps:
 
-### Go to your GTM account & create new tag
+### Go to your GTM account and create a new tag
 ---
 ![alt text](http://i.imgur.com/k7F0xpY.png)
 
@@ -41,9 +41,9 @@ In order to use Bye-iQ, you just need to copy and paste Ematic initial script to
 ---
 ## Retry-iQ Implementation With GTM
 
-In order to use Retry-iQ, you have to implement 4 events (browse, cart, checkout, conversion) to the GTM as well.
+To use Retry-iQ, implement 4 events (browse, cart, checkout, conversion) to the GTM as well.
 
-The first step is to prepare your data. Then call our methods based on how your website is structured.
+Prepare your data first, and then call our methods based on how your website is structured.
 
 ### Preparing Data Layer
 ---

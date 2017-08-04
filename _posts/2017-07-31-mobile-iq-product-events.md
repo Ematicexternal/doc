@@ -10,7 +10,7 @@ If user was **already logged in** (before you implemented MobileIQ), you need 
 
     MobileIQ.submitEmailAddress("john.doe@example.com");
 
-_Note: Although it is enough to call this only once, you can call it every time the app starts, for example, after initialization code ([Setup, Step 2](http://api.ematicsolutions.com/v1/mobileiq/#setup))._
+_Note: Although it is enough to call this only once, you can call it every time the app starts, for example, after initialization code ([Setup, Step 2]({{ site.baseurl }}{% post_url 2017-07-31-mobile-iq-setup %}))._
 
 # Product Events
 

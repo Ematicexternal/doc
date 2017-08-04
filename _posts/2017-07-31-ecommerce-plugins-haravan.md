@@ -5,7 +5,7 @@ categories: Ecommerce-Plugins
 order: 5
 ---
 
-# Ematic.js app for Haravan
+# Ematic.js Application for Haravan
 
 Ematic.js Installer is a Haravan app that adds or removes Ematic.js code to your Haravan store.
 
