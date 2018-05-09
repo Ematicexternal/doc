@@ -15,8 +15,7 @@ Do the following steps to install the module:
 2.  Login to your Back Office (admin panel).
 3.  Go to 'Modules and Services'.
 4.  On the top-right corner press on 'Add new module' button.
-5.  Upload your module as shown below:
-
+5.  Upload your module as shown below: 
 ![Screenshot](https://bye.ematicsolutions.com/img/module1.png)
 6.	Install and configure the uploaded module:
 ![Screenshot](https://bye.ematicsolutions.com/img/module2.png)
