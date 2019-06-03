@@ -96,8 +96,9 @@ For every event, array of products should be sent to the Core API. Product is a 
       "experiment_id": 0,               // Must be 0
       "client_product_id": "string",    // Product ID
       "client_category_id": "string",   // Product category ID if available
-      "price_number": 0,                // Product price
       "price": "string",                // Formatted product price with currency
+      "price_number": "string",         // Product price in number format
+      "price_currency": "string",       // Product currency in three letter ISO format
       "name": "string",                 // Product name
       "description": "string",          // Product description (up to 255 characters)
       "brand_name": "string",           // Product brand if available
@@ -113,7 +114,7 @@ For every event, array of products should be sent to the Core API. Product is a 
 
 ````json
 {
-  "uuid": "11279900"
+  "uuid": "11279900",
   "email": "user@example.com",
   "clientEnv": {
     "deviceHeight": 0,
@@ -166,11 +167,11 @@ Example request:
 
 ````json
 {
-  "uuid": "11279900"
+  "uuid": "11279900",
   "email": "user@example.com",
   "subscribe_email_addr": "user@example.com",
   "first_name": "John",
-  "last_name": "Smith"
+  "last_name": "Smith",
   "clientEnv": {
     "deviceHeight": 0,
     "deviceWidth": 0,
