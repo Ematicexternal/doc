@@ -7,31 +7,19 @@ order: 3
 # Integrating with Google Tag Manager
 
 ## Steps
+1. Prepare the data needed from your back-end and send it as a dataLayer object.
+2. Go to your GTM Account.
+3. Create a new GTM tag.
+4. Paste the script and choose the trigger.
+5. Preview the tag to test it.
+6. Publish the tag.
+
 ---
-1. Prepare the data needed from your backend and send it as dataLayer object
-2. Go to your GTM Account
-3. Create new GTM tag
-4. Paste the script and choose the trigger
-5. Preview the tag to test it
-6. Publish the tag
+## Initializing Ematic.js With GTM
 
+To use Bye-iQ, copy and paste the Ematic initial script to the custom HTML tag in GTM. These are the steps:
 
-### Preparing Data Layer
----
-```js
-dataLayer.push({
-    'PageType': 'Productpage',
-    'Email': 'alex.kurniawan@ematicsolutions.com',
-    'ProductName': 'Sunset Credenza',
-    'ProductId': '43243',
-    'ProductPrice': 'Rp 2.449.300',
-    'BrandName': 'Hemma',
-    'ImageUrl':'https://yourimageurlcdn.imgix.net/catalog/product/cache/1/thumbnail/1200x/17f82f742ffe127f42dca9de82fb58b1/p/r/product-page_mg_0305.jpg'
-});
-```
-
-
-### Go to your GTM account & create new tag
+### Go to your GTM account and create a new tag
 ---
 ![alt text](http://i.imgur.com/k7F0xpY.png)
 
@@ -46,9 +34,30 @@ dataLayer.push({
 ![alt text](http://i.imgur.com/yqSb5Q9.png)
 
 
-### Paste your code to the container box
+### Paste the code to the HTML box
 ---
 ![alt text](http://i.imgur.com/pXucu6P.png)
+
+---
+## Retry-iQ Implementation With GTM
+
+To use Retry-iQ, implement 4 events (browse, cart, checkout, conversion) to the GTM as well.
+
+Prepare your data first, and then call our methods based on how your website is structured.
+
+### Preparing Data Layer
+---
+```js
+dataLayer.push({
+    'PageType': 'Productpage',
+    'Email': 'alex.kurniawan@ematicsolutions.com',
+    'ProductName': 'Sunset Credenza',
+    'ProductId': '43243',
+    'ProductPrice': 'Rp 2.449.300',
+    'BrandName': 'Hemma',
+    'ImageUrl':'https://yourimageurlcdn.imgix.net/catalog/product/cache/1/thumbnail/1200x/17f82f742ffe127f42dca9de82fb58b1/p/r/product-page_mg_0305.jpg'
+});
+```
 
 
 ### Abandoned Browse Code Example
@@ -84,8 +93,8 @@ dataLayer.push({
           link: location.protocol + '//' + location.host + location.pathname;
         };
 
-        // If something wrong with the value, just cancel the method call
         if(product.name && product.imageUrl && product.link ) {
+            // call the "browse" method
             ematics("log", "product", "browse", [product]);
         }
     }
