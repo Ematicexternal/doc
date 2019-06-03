@@ -20,6 +20,8 @@ Prepare the following product array:
       categoryId: <category id>,
       transactionId: <transaction id>,
       price: "<unit price with currency>", //required
+      priceNumber: <price number in number format>, //required
+      priceCurrency: "<price currency in three letter ISO format>", //required
       quantity: <quantity>, //required
       name: "<name>", //required
       brandName: "<brandname>", //required
@@ -33,6 +35,8 @@ Prepare the following product array:
       categoryId: <category id>,
       transactionId: <transaction id>,
       price: "<unit price with currency>", //required
+      priceNumber: <price number in number format>, //required
+      priceCurrency: "<price currency in three letter ISO format>", //required
       quantity: <quantity>, //required
       name: "<name>", //required
       brandName: "<brandname>", //required
