@@ -2,7 +2,7 @@
 layout: default
 title:  "Integrating with GTM"
 categories: Quick-Start
-order: 3
+order: 5
 ---
 # Integrating with Google Tag Manager
 
