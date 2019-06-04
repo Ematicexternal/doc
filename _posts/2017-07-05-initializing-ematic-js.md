@@ -66,3 +66,23 @@ require(["ematics"], function() {
 });
 ```
 > __Important Note:__ Cookies are used to track unique visitors and to limit the display of the popups. Cookies must be cleared in order to re-test the display of the popups.
+
+## onAfterSubscribe Event
+---
+Alternately, you can trigger your custom code when a visitor subscribes using Bye-iQ by defining an event as shown below as part of the "opt" object that is passed on when you initialize the library.
+
+```js
+<script>
+    ...
+    
+    //define the event before initializing
+    opt.events = {
+        onAfterSubscribe: function(email) {
+            //execute your code
+        }
+    };
+    
+    //then initialize
+    ematics("create", ematicApikey, opt);
+</script>
+```
