@@ -84,7 +84,6 @@ Sau khi khách hàng đặt hàng thành công, gọi api dưới đây:
 //track conversion
 ematics("log", "product", "convert", products);
 ```
-Bước này sẽ giúp khách hàng không nhận được email nếu họ đã đặt hành thành công
 
 
 ## Ví dụ
