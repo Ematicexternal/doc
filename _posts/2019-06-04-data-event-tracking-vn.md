@@ -5,11 +5,11 @@ categories: Quick-Start
 order: 4
 ---
 
-# Theo dõi dữ liệu và sự kiện
+# Đăng ký hành vi khác hàng
 
 ## Chuẩn bị dữ liệu sản phẩm của bạn
 ---
-Để sử dụng Retry-iQ, theo dõi dữ liệu và sự kiện phải được triển khai.
+Để sử dụng RetryIQ, vui lòng làm theo hướng dẫn bên dưới.
 
 Biến thông tin mảng products kèm theo khi gọi api có cấu trúc sau:
 
@@ -48,21 +48,21 @@ Biến thông tin mảng products kèm theo khi gọi api có cấu trúc sau:
 
 Lưu ý: gửi giá khuyến mãi nếu sản phẩm đang có khuyến mãi
 
-Mảng sản phẩm là ảnh chụp nhanh tất cả các mặt hàng trong giỏ hàng, tất cả các mặt hàng cần thanh toán hoặc tất cả các mặt hàng đang được chuyển đổi.
+Mảng products chứa thông tin về những sản phẩm mà khách hàng đã xem hoặc những sản phẩm trong giỏ hàng. Những thông tin này sẽ được đính kèm vào email gởi ra cho khách hàng để tăng tăng tỉ lệ mua hàng.
 
 ## Theo dõi sự kiện Ematic
 ---
-Có 4 sự kiện (duyệt, giỏ hàng, thanh toán, chuyển đổi) cần được thực hiện trên trang web của bạn. Xin lưu ý rằng tất cả các phương thức này cần phải có sau khi đối tượng theo dõi Ematic được tạo.
+Có 4 sự kiện (xem sản phẩm, xem giỏ hàng, bắt đầu thanh toán, mua hàng thành công) cần được theo dõi và gởi lên Ematic. Lưu lý là những sự kiện này chỉ được gọi sau khi dịch vụ Ematic đã được khởi tạo thành công ở bước "Tích hợp Ematic.js".
 
 ### Khi khách hàng xem chi tiết sản phẩm
-Call api gửi thông tin products **mảng**:
+khi khách hàng xem một sản phẩm, hãy gọi hàm dưới đây
 
 ```js
 //track items browsed
 ematics("log", "product", "browse", products);
 ```
-### Khi khách hàng click “Mua ngay” để thêm sản phẩm vào giỏ hàng
-Call api gửi thông tin thêm sản phẩm vào giỏ hàng:
+### Thêm sảm phẩm vào giỏ hàng
+Khi khách hàng thêm sản phẩm vào giỏ hàng, hãy gọi hàm dưới dây:
 
 ```js
 //track items in cart to enable pre-abandonded cart overlays
@@ -70,14 +70,14 @@ ematics("log", "product", "cart", products);
 ```
 > __Lưu ý:__ Nếu khách hàng cập nhật thông tin đơn hàng như số lượng, hay xóa sản phẩm thì phải gọi lại api này.
 
-### Khi khách hàng click vào “Thanh toán” từ page Giỏ hàng
-Call api gửi thông tin giỏ hàng:
+### Bắt đầu thanh toán/mua hàng
+Khi khách hàng bắt đầu thanh toán, hãy gọi hàm dưới đây:
 
 ```js
 //track checkout
 ematics("log", "product", "checkout", products);
 ```
-### Khi khách hàng đặt hàng thành công
+### Mua hàng thành công
 Sau khi khách hàng đặt hàng thành công, gọi api dưới đây:
 
 ```js
@@ -87,41 +87,41 @@ ematics("log", "product", "convert", products);
 Bước này sẽ giúp khách hàng không nhận được email nếu họ đã đặt hành thành công
 
 
-## Kịch bản ví dụ
+## Ví dụ
 ---
 Dưới đây là một chuỗi ví dụ về các hoạt động giỏ hàng và nhật ký kết quả từ chúng.
 
-#### 1. Thêm mục A vào giỏ hàng
+#### 1. Thêm sản phẩm A vào giỏ hàng
 ```js
 products = [A];
 ematics("log", "product", "cart", products);
 ```
-#### 2. Thêm mục B vào giỏ hàng
+#### 2. Thêm sản phẩm B vào giỏ hàng
 ```js
 products = [A, B];
 ematics("log", "product", "cart", products);
 ```
-#### 3. Thêm mục C vào giỏ hàng
+#### 3. Thêm sản phẩm C vào giỏ hàng
 ```js
 products = [A, B, C];
 ematics("log", "product", "cart", products);
 ```
-#### 4. Xóa mục B khỏi giỏ hàng
+#### 4. Xóa sản phẩm B khỏi giỏ hàng
 ```js
 products = [A, C];
 ematics("log", "product", "cart", products);
 ```
-#### 5. Thêm mục C vào giỏ hàng
+#### 5. Thêm sản phẩm C vào giỏ hàng
 ```js
 products = [A, C, D];
 ematics("log", "product", "cart", products);
 ```
-#### 6. Bắt đầu quá trình thanh toán
+#### 6. Bắt đầu quá trình thanh toán/mua hàng
 ```js
 products = [A, C, D];
 ematics("log", "product", "checkout", products);
 ```
-#### 7. Hoàn tất thanh toán
+#### 7. Đặt hàng thành công
 ```js
 products = [A, C, D];
 ematics("log", "product", "convert", products);

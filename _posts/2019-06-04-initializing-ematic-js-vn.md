@@ -5,9 +5,9 @@ categories: Quick-Start
 order: 3
 ---
 
-# Khởi tạo dịch vụ của Ematic.js
+# Tích hợp Ematic.js
 
-Trong trường hợp nếu website của bạn đang sử dụng requireJS thì làm theo hướng dẫn phía dưới (mục khởi tạo Ematic.js với requireJS)
+Nếu website của bạn đang sử dụng requireJs thì làm theo hướng dẫn ở mục "Tích hợp Ematic.js với RequireJS" (bên dưới)
 
 Để sử dụng Bye-iQ, sao chép và dán đoạn code JavaScript dưới __đây trước thẻ__ ```</head>```
 
@@ -24,19 +24,19 @@ Trong trường hợp nếu website của bạn đang sử dụng requireJS thì
 </script>
 ```
 
-Khi chạy đoạn code trên, thư viện của Ematic đồng thời được load trên page và sau đó tạo ra một tracker object cho Ematic API key được chọn
+Khi chạy đoạn code trên, thư viện của Ematic sẽ được tải về và sau đó tạo ra một tracker object với ematicApiKey đã khai báo
 
-### Thêm địa chỉ email vào tập lệnh
+### Đăng ký email khách hàng với dịch vụ của Ematic
 
-Khi người dùng đăng nhập, bạn cần chuyển email bằng phương thức này để theo dõi chính xác:
+Khi khách hàng đăng nhập hoặc để lại email trên website, gọi hàm ematic bên dưới để đăng ký email với Ematic. Việc này sẽ giúp dịch vụ của Ematic làm việc hiệu quả:
 
 ```js
 ematics("set", "email", "<email of the user logged in if applicable>")
 ```
 ---
-# Khởi tạo dịch vụ của Ematic.js on RequireJS:
+# Tích hợp Ematic.js với requireJs:
 
-Nếu website của bạn sử dụng requireJS, tạo configuration như dưới đây để khởi tạo dịch vụ của Ematic
+Nếu website của bạn sử dụng requireJS, tạo cấu hình như sau để khởi tạo và sử dụng dịch vụ của Ematic
 
 ```js
 require.config({
@@ -64,11 +64,11 @@ require(["ematics"], function() {
     //execute your code
 });
 ```
-> __Lưu ý:__ Cookies được dùng để đọc các sự Unique and để giới hạn hiển thị của popups. Cookies cần xoá trong đặt order để thử thử các hiển thị của popups.
+> __Lưu ý:__ Cookies được sử dùng để định danh người dùng và giới hạn lượt hiển thị của popups. Trong trường hợp bạn muốn kiểm tra việc hiển thị popup của ByeIQ, bạn nên sử dụng trình duyệt ẩn danh hoặc phải xóa cookies của trình duyệt.
 
 ## onAfterSubscribe Event
 ---
-Alternately, you can trigger your custom code when a visitor subscribes using Bye-iQ by defining an event as shown below as part of the "opt" object that is passed on when you initialize the library.
+Ngoài ra, bạn có thể đăng ký sự kiện onAfterSubscribe lúc khởi tạo. Hàm này sẽ được gọi khi có khách hàng đăng ký email trên Bye-iQ popup.
 
 ```js
 <script>
