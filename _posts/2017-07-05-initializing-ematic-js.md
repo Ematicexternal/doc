@@ -51,8 +51,7 @@ require.config({
         }
     },
     paths: {
-        "ematics": "//api.ematicsolutions.com/v1/ematic.require.min",
-        "jquery": "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min" //or your local jquery path
+        "ematics": "//api.ematicsolutions.com/v1/ematic.min"
     },
     shim: {
         'ematics': ['jquery']

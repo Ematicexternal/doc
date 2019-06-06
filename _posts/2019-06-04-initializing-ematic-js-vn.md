@@ -51,7 +51,7 @@ require.config({
         }
     },
     paths: {
-        "ematics": "//api.ematicsolutions.com/v1/ematic.min",
+        "ematics": "//api.ematicsolutions.com/v1/ematic.min"
     },
     shim: {
         'ematics': ['jquery']
