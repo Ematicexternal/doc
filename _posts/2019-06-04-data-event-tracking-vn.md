@@ -1,6 +1,6 @@
 ---
 layout: default
-title:  "Theo dõi dữ liệu và sự kiện"
+title:  "Đăng ký hành vi khác hàng"
 categories: Quick-Start
 order: 4
 ---

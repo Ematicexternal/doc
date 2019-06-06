@@ -1,6 +1,6 @@
 ---
 layout: default
-title:  "Khởi tạo dịch vụ của Ematic.js"
+title:  "Tích hợp Ematic.js"
 categories: Quick-Start
 order: 3
 ---
