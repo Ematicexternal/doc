@@ -21,10 +21,10 @@ Commands (Step 3):
 
     wget http://api.ematicsolutions.com/v1/plugins/dist/ematicsolutions_ematicjs_v1.0.5-mage2.zip
     mkdir -p ./app/code/Ematicsolutions/Ematicjs
-    unzip ematicsolutions_ematicjs_v1.0.2-mage2.zip -d ./app/code/Ematicsolutions/Ematicjs
+    unzip ematicsolutions_ematicjs_v1.0.5-mage2.zip -d ./app/code/Ematicsolutions/Ematicjs
     ./bin/magento setup:upgrade
     ./bin/magento cache:flush
-    rm ematicsolutions_ematicjs_v1.0.2-mage2.zip
+    rm ematicsolutions_ematicjs_v1.0.5-mage2.zip
 
 If `./bin/magento` does not run, try executing `chmod +x ./bin/magento` to make it executable.
 
