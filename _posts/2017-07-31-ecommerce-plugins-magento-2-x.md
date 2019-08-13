@@ -19,7 +19,7 @@ Do the following steps to install the module manually:
 
 Commands (Step 3):
 
-    wget http://api.ematicsolutions.com/v1/plugins/dist/ematicsolutions_ematicjs_v1.0.2-mage2.zip
+    wget http://api.ematicsolutions.com/v1/plugins/dist/ematicsolutions_ematicjs_v1.0.5-mage2.zip
     mkdir -p ./app/code/Ematicsolutions/Ematicjs
     unzip ematicsolutions_ematicjs_v1.0.2-mage2.zip -d ./app/code/Ematicsolutions/Ematicjs
     ./bin/magento setup:upgrade
