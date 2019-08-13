@@ -11,7 +11,7 @@ order: 1
 
 Do the following steps to install the module manually:
 
-1.  Download the module archive from [this link](http://api.ematicsolutions.com/v1/plugins/dist/ematicsolutions_ematicjs_v1.0.7-mage1.zip)
+1.  Download the module archive from [this link](http://api.ematicsolutions.com/v1/plugins/dist/ematicsolutions_ematicjs_v1.0.9-mage1.zip)
 2.  Upload it to the root folder of your Magento website, and then extract the contents.
 3.  Log in to the Magento back-end, and then refresh the cache in _System > Cache Management_.
 4.  Log out, and then login again.
