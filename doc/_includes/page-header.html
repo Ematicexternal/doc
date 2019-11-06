@@ -1,0 +1,58 @@
+<section class="page-header">
+  
+  <div class="header-image">
+    <a href="{{ site.baseurl }}/"><img src="https://platform.ematicsolutions.com/assets/img/ematic-logo.png" class="hs-image-widget " style="width:150px;border-width:0px;border:0px;vertical-align:middle" alt="ematic-logo.svg" title="ematic-logo.svg"></a>
+  </div>
+
+  <div class="header-menu">
+  {% for category in site.categories %}
+  {% capture category_name %}{{ category | first }}{% endcapture %}
+    {% if category_name == "New-To-Ematic" or category_name == "Hi-iQ" or category_name == "Bye-iQ" or category_name == "Retry-iQ" or category_name == "Email-Performance" %}
+    <div class="header-dropdown">
+            <button class="dropbtn" name="{{ category | first }}">{{ category | first | replace: '-',' '}}</button>
+                  <i class="down"></i>
+            {% assign sorted_posts = site.posts | sort: 'order' %}
+            <div class="header-dropdown-content">
+            {% for posts in category[0] %}
+              {% for post in sorted_posts %}
+                {% if post.categories contains category[0] %}
+                     {% if post.url %}
+
+                      <a href="{{ post.url | prepend:site.baseurl }}">{{ post.title }}</a>
+                     {% endif %}
+                 {% endif %}
+              {% endfor %}
+            {% endfor %}
+          </div>
+        </div>
+            {% endif %}
+        {% endfor %}
+
+{% comment %} Below is to push FAQ category to the end on the header menu {% endcomment %}
+
+        {% for category in site.categories %}
+  {% capture category_name %}{{ category | first }}{% endcapture %}
+    {% if category_name == "FAQ" %}
+    <div class="header-dropdown">
+            <button class="dropbtn" name="{{ category | first }}">{{ category | first | replace: '-',' '}}</button>
+                  <i class="down"></i>
+            {% assign sorted_posts = site.posts | sort: 'order' %}
+            <div class="header-dropdown-content">
+            {% for posts in category[0] %}
+              {% for post in sorted_posts %}
+                {% if post.categories contains category[0] %}
+                     {% if post.url %}
+
+                      <a href="{{ post.url | prepend:site.baseurl }}">{{ post.title }}</a>
+                     {% endif %}
+                 {% endif %}
+              {% endfor %}
+            {% endfor %}
+          </div>
+        </div>
+            {% endif %}
+        {% endfor %}
+
+</div>
+  
+</section>
