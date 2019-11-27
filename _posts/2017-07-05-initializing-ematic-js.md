@@ -18,9 +18,16 @@ To use Bye-iQ, copy and paste the following JavaScript snippet into your website
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//api.ematicsolutions.com/v1/ematic.min.js','ematics');
+
+    var opt = {
+        email: "<email of the user logged in if applicable>",
+        country_iso: "<country>",
+        currency_iso: "<currency>",
+        language_iso: "<language>"
+    }
     
     //initialize
-    ematics("create", ematicApikey, null);
+    ematics("create", ematicApikey, opt);
 </script>
 ```
 
