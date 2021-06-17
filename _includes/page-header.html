@@ -1,10 +1,10 @@
-<section class="page-header">
+<section class="page-header" style="padding-bottom: 30px; padding-top:10px">
   
   <div class="header-image">
-    <a href="{{ site.baseurl }}/"><img src="https://platform.ematicsolutions.com/assets/img/ematic-logo.png" class="hs-image-widget " style="width:150px;border-width:0px;border:0px;vertical-align:middle" alt="ematic-logo.svg" title="ematic-logo.svg"></a>
+    <a href="{{ site.baseurl }}/"><img src="{{site.baseurl}}/assets/img/header-logo/EmaticSolutions-Logo-2021-Horizontal-Fullcolor.png" class="hs-image-widget " style="width:150px;" alt="ematic-logo.svg" title="ematic-logo.svg"></a>
   </div>
 
-  <div class="header-menu">
+  <div class="header-menu" style="padding-top: 10px;">
   {% for category in site.categories %}
   {% capture category_name %}{{ category | first }}{% endcapture %}
     {% if category_name == "New-To-Ematic" or category_name == "Hi-iQ" or category_name == "Bye-iQ" or category_name == "Retry-iQ" or category_name == "Email-Performance" %}
